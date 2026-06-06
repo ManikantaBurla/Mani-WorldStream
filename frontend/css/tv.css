@@ -1,0 +1,659 @@
+/* ===================================================== */
+/* GLOBAL */
+/* ===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    radial-gradient(circle at top left,#111827 0%,#050816 40%),
+    linear-gradient(135deg,#020617,#0f172a);
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+/* ===================================================== */
+/* PARTICLES */
+/* ===================================================== */
+
+body::before{
+
+    content:'';
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+    radial-gradient(cyan 1px,transparent 1px),
+    radial-gradient(#7c3aed 1px,transparent 1px);
+
+    background-size:120px 120px;
+
+    opacity:0.08;
+
+    animation:particlesMove 20s linear infinite;
+
+    pointer-events:none;
+
+    z-index:-2;
+}
+
+@keyframes particlesMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-120px);
+    }
+}
+
+/* ===================================================== */
+/* SCROLLBAR */
+/* ===================================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(45deg,#00d4ff,#7c3aed);
+
+    border-radius:50px;
+}
+
+/* ===================================================== */
+/* GLOW */
+/* ===================================================== */
+
+.bg-glow{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(140px);
+
+    z-index:-1;
+}
+
+.glow1{
+
+    width:500px;
+    height:500px;
+
+    background:#00d4ff;
+
+    top:-150px;
+    left:-150px;
+
+    opacity:0.15;
+}
+
+.glow2{
+
+    width:450px;
+    height:450px;
+
+    background:#7c3aed;
+
+    bottom:-150px;
+    right:-150px;
+
+    opacity:0.15;
+}
+
+/* ===================================================== */
+/* PAGE */
+/* ===================================================== */
+
+.tv-page{
+
+    margin-left:95px;
+
+    padding:30px;
+}
+
+/* ===================================================== */
+/* HERO */
+/* ===================================================== */
+
+.tv-hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:85vh;
+
+    overflow:hidden;
+
+    border-radius:35px;
+
+    margin-bottom:70px;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 60px rgba(0,255,255,0.12);
+}
+
+.tv-hero iframe{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    width:120%;
+
+    height:120%;
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.2);
+
+    border:none;
+
+    pointer-events:none;
+}
+
+@keyframes heroZoom{
+
+    0%{
+        transform:scale(1.15);
+    }
+
+    50%{
+        transform:scale(1.25);
+    }
+
+    100%{
+        transform:scale(1.15);
+    }
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    to right,
+    rgba(0,0,0,0.95),
+    rgba(0,0,0,0.3)
+    );
+
+    z-index:1;
+}
+
+/* ===================================================== */
+/* HERO CONTENT */
+/* ===================================================== */
+
+.hero-content{
+
+    position:absolute;
+
+    z-index:2;
+
+    top:50%;
+    left:70px;
+
+    transform:translateY(-50%);
+
+    max-width:650px;
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:cyan;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+    margin-bottom:25px;
+
+    backdrop-filter:blur(20px);
+}
+
+.hero-content h1{
+
+    font-size:90px;
+
+    line-height:1;
+
+    margin-bottom:25px;
+
+    font-weight:900;
+
+    background:
+    linear-gradient(
+    45deg,
+    white,
+    #cbd5e1,
+    #00d4ff
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    
+    
+    animation:glowText 3s ease infinite alternate;
+}
+
+@keyframes glowText{
+
+    from{
+
+        text-shadow:
+        0 0 15px rgba(0,255,255,0.2);
+    }
+
+    to{
+
+        text-shadow:
+        0 0 35px rgba(0,255,255,0.6),
+        0 0 55px rgba(124,58,237,0.4);
+    }
+}
+
+.hero-content p{
+
+    color:#d1d5db;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+.hero-content button{
+
+    padding:18px 42px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #00d4ff,
+    #7c3aed
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.4s ease;
+
+    box-shadow:
+    0 0 30px rgba(0,255,255,0.25);
+}
+
+.hero-content button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 45px rgba(0,255,255,0.6);
+}
+
+/* ===================================================== */
+/* ROW */
+/* ===================================================== */
+
+.stream-row{
+
+    margin-bottom:80px;
+}
+
+.row-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.row-header h2{
+
+    font-size:38px;
+
+    font-weight:800;
+}
+
+.row-header span{
+
+    color:cyan;
+
+    letter-spacing:2px;
+}
+
+/* ===================================================== */
+/* SLIDER */
+/* ===================================================== */
+
+.stream-slider{
+
+    display:flex;
+
+    gap:35px;
+
+    overflow-x:auto;
+
+    scroll-behavior:smooth;
+
+    scroll-snap-type:x mandatory;
+
+    padding-bottom:20px;
+}
+
+/* ===================================================== */
+/* CARD */
+/* ===================================================== */
+
+.stream-card{
+    background:black;
+
+    position:relative;
+
+    min-width:650px;
+
+    height:78vh;
+
+    overflow:hidden;
+
+    border-radius:35px;
+
+    scroll-snap-align:center;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    background:rgba(255,255,255,0.04);
+
+    backdrop-filter:blur(20px);
+
+    transition:0.5s ease;
+
+    animation:floatCard 6s ease infinite;
+
+    box-shadow:
+    0 0 40px rgba(0,255,255,0.08);
+}
+
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+.stream-card:hover{
+
+    transform:
+    perspective(1500px)
+    rotateY(-4deg)
+    scale(1.02);
+
+    box-shadow:
+    0 0 55px rgba(0,255,255,0.35);
+}
+
+/* ===================================================== */
+/* CYBER BORDER */
+/* ===================================================== */
+
+.stream-card::after{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:35px;
+
+    padding:2px;
+
+    background:
+    linear-gradient(
+    45deg,
+    cyan,
+    #7c3aed,
+    cyan
+    );
+
+    border:2px solid rgba(0,255,255,0.4);
+
+    opacity:0;
+
+    transition:0.5s ease;
+
+    box-shadow:
+    0 0 25px cyan,
+    0 0 45px #7c3aed;
+}
+
+
+.stream-card:hover::after{
+
+
+    opacity:1;
+}
+
+/* ===================================================== */
+/* VIDEO */
+/* ===================================================== */
+
+.stream-card iframe{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    width:120%;
+
+    height:120%;
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.2);
+
+    pointer-events:none;
+
+    border:none;
+
+    transition:1s ease;
+}
+
+/* ===================================================== */
+/* OVERLAY */
+/* ===================================================== */
+
+.stream-card::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    to top,
+    rgba(0,0,0,0.95),
+    rgba(0,0,0,0.15)
+    );
+
+    z-index:1;
+}
+
+/* ===================================================== */
+/* CARD INFO */
+/* ===================================================== */
+
+.card-info{
+
+    position:absolute;
+
+    bottom:0;
+
+    z-index:2;
+
+    width:100%;
+
+    padding:35px;
+}
+
+.card-info h3{
+
+    font-size:38px;
+
+    margin-bottom:10px;
+}
+
+.card-info p{
+
+    color:#d1d5db;
+
+    font-size:17px;
+
+    line-height:1.7;
+}
+
+.card-info button{
+
+    margin-top:20px;
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #00d4ff,
+    #7c3aed
+    );
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
+
+footer{
+
+    text-align:center;
+
+    margin-top:100px;
+
+    color:#94a3b8;
+
+    padding-bottom:40px;
+}
+
+/* ===================================================== */
+/* MOBILE */
+/* ===================================================== */
+
+@media(max-width:768px){
+
+    .tv-page{
+
+        margin-left:0;
+
+        padding:15px;
+    }
+
+    .hero-content{
+
+        left:25px;
+
+        max-width:90%;
+    }
+
+    .hero-content h1{
+
+        font-size:52px;
+    }
+
+    .hero-content p{
+
+        font-size:15px;
+    }
+
+    .stream-card{
+
+        min-width:92vw;
+
+        height:65vh;
+    }
+
+    .card-info h3{
+
+        font-size:28px;
+    }
+
+    .row-header h2{
+
+        font-size:28px;
+    }
+}

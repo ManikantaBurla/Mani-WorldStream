@@ -1,0 +1,562 @@
+/* ===== GLOBAL ===== */
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #0b0f1a;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===== MAIN CONTENT ===== */
+
+.main-content {
+    margin-left: 90px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.navbar:hover ~ .main-content {
+    margin-left: 220px;
+}
+
+/* ===================================================== */
+/* =============== CINEMATIC HERO SECTION ============== */
+/* ===================================================== */
+
+.hero-slider{
+    position: relative;
+    width: 100%;
+    height: 75vh;
+
+    overflow: hidden;
+    border-radius: 25px;
+
+    margin-bottom: 50px;
+
+    box-shadow:
+    0px 0px 40px rgba(0,0,0,0.6);
+}
+
+/* ===================================================== */
+/* ===================== EACH SLIDE ==================== */
+/* ===================================================== */
+
+.slide{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    transition:
+    opacity 1.5s ease,
+    transform 8s ease;
+
+    transform: scale(1);
+}
+
+/* ACTIVE SLIDE */
+
+.slide.active{
+    opacity: 1;
+    z-index: 1;
+}
+
+/* ===================================================== */
+/* ================= BACKGROUND IMAGE ================== */
+/* ===================================================== */
+
+.slide img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1);
+
+    transition: transform 8s ease;
+}
+
+/* CINEMATIC ZOOM EFFECT */
+
+.slide.active img{
+    transform: scale(1.08);
+}
+
+/* ===================================================== */
+/* ==================== DARK OVERLAY =================== */
+/* ===================================================== */
+
+.overlay{
+    position: absolute;
+    inset: 0;
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(0,0,0,0.92),
+        rgba(0,0,0,0.25)
+    );
+}
+
+/* ===================================================== */
+/* ================= HERO CONTENT ====================== */
+/* ===================================================== */
+
+.hero-content{
+    position: absolute;
+
+    top: 50%;
+    left: 80px;
+
+    transform: translateY(-50%);
+
+    color: white;
+
+    max-width: 650px;
+
+    z-index: 2;
+}
+
+/* ===================================================== */
+/* ===================== TITLE ========================= */
+/* ===================================================== */
+
+.hero-content h1{
+    font-size: 72px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+    line-height: 1.1;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+    0px 0px 20px rgba(0,0,0,0.7);
+
+    animation: fadeUp 1s ease;
+}
+
+/* ===================================================== */
+/* ================== DESCRIPTION ====================== */
+/* ===================================================== */
+
+.hero-content p{
+    font-size: 22px;
+
+    color: #d1d1d1;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+
+    animation: fadeUp 1.3s ease;
+}
+
+/* ===================================================== */
+/* ===================== BUTTON ======================== */
+/* ===================================================== */
+
+.hero-content button{
+    padding: 15px 38px;
+
+    border: none;
+    border-radius: 50px;
+
+    background:
+    linear-gradient(
+        45deg,
+        #00bfff,
+        #6a5acd
+    );
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.4s ease;
+
+    box-shadow:
+    0px 0px 20px rgba(0,191,255,0.5);
+
+    animation: fadeUp 1.6s ease;
+}
+
+/* BUTTON HOVER */
+
+.hero-content button:hover{
+    transform: scale(1.08);
+
+    box-shadow:
+    0px 0px 35px rgba(0,191,255,0.9);
+}
+
+/* ===================================================== */
+/* ================== AUTO SCROLL BAR ================== */
+/* ===================================================== */
+
+.hero-slider::after{
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00bfff,
+        #6a5acd
+    );
+
+    animation: progress 5s linear infinite;
+}
+
+/* ===================================================== */
+/* ==================== ANIMATIONS ===================== */
+/* ===================================================== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* AUTO SLIDE PROGRESS */
+
+@keyframes progress{
+
+    from{
+        width: 0%;
+    }
+
+    to{
+        width: 100%;
+    }
+}
+
+/* ===================================================== */
+/* ==================== RESPONSIVE ===================== */
+/* ===================================================== */
+
+@media(max-width:768px){
+
+    .hero-slider{
+        height: 60vh;
+    }
+
+    .hero-content{
+        left: 30px;
+        max-width: 90%;
+    }
+
+    .hero-content h1{
+        font-size: 42px;
+    }
+
+    .hero-content p{
+        font-size: 16px;
+    }
+
+    .hero-content button{
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+}
+
+/* ===================================================== */
+/* ===================== ROWS ========================== */
+/* ===================================================== */
+
+.row {
+    margin-bottom: 50px;
+}
+
+.row h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* SLIDER */
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===================================================== */
+/* ================= MOVIE CARDS ======================= */
+/* ===================================================== */
+
+.movie-card {
+    position: relative;
+    min-width: 220px;
+    height: 320px;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s ease;
+    background: #1c1f26;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+}
+
+/* WIDE CARDS */
+
+.movie-card.wide {
+    min-width: 340px;
+    height: 200px;
+}
+
+/* IMAGE */
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+/* HOVER EFFECT */
+
+.movie-card:hover {
+    transform: scale(1.08);
+    z-index: 5;
+}
+
+.movie-card:hover img {
+    transform: scale(1.1);
+}
+
+/* MOVIE OVERLAY */
+
+.movie-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.95),
+        transparent
+    );
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.movie-card:hover .movie-overlay {
+    opacity: 1;
+}
+
+/* MOVIE TITLE */
+
+.movie-overlay h3 {
+    color: white;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+/* TRAILER BUTTON */
+
+.movie-overlay button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #00bfff, #6a5acd);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.movie-overlay button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(0,191,255,0.6);
+}
+
+/* ===================================================== */
+/* ================= CATEGORY ========================== */
+/* ===================================================== */
+
+.language-card,
+.category {
+    min-width: 150px;
+    height: 90px;
+    background: linear-gradient(135deg, #1f80e0, #132f4c);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+}
+
+.language-card:hover,
+.category:hover {
+    transform: scale(1.08);
+}
+
+/* ===================================================== */
+/* ================= FOOTER ============================ */
+/* ===================================================== */
+
+footer {
+    margin-top: 80px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+
+/* ===================================================== */
+/* ================= RESPONSIVE ======================== */
+/* ===================================================== */
+
+@media(max-width: 768px){
+
+    .hero-content {
+        left: 30px;
+        max-width: 90%;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-slider {
+        height: 70vh;
+    }
+
+    .movie-card {
+        min-width: 180px;
+        height: 260px;
+    }
+
+    .movie-card.wide {
+        min-width: 280px;
+        height: 170px;
+    }
+}
+/* ===================================================== */
+/* ================= TRAILER MODAL ===================== */
+/* ===================================================== */
+
+.trailer-modal{
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+    rgba(0,0,0,0.92);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(10px);
+}
+
+/* MODAL BOX */
+
+.modal-content{
+
+    position: relative;
+
+    width: 88%;
+    height: 85vh;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+    0px 0px 50px rgba(0,191,255,0.25);
+
+    animation: popup 0.5s ease;
+}
+
+/* IFRAME */
+
+.modal-content iframe{
+
+    width: 100%;
+    height: 100%;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn{
+
+    position: absolute;
+
+    top: 18px;
+    right: 25px;
+
+    color: white;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition: 0.3s ease;
+}
+
+.close-btn:hover{
+
+    transform: scale(1.2);
+
+    color: #00bfff;
+}
+
+/* POPUP ANIMATION */
+
+@keyframes popup{
+
+    from{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}

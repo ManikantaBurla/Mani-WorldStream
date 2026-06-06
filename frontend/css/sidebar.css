@@ -1,0 +1,100 @@
+/* ===== HOTSTAR STYLE SIDEBAR ===== */
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background-color: #0f1014;
+    color: white;
+}
+
+/* SIDEBAR CONTAINER */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 85px;
+    height: 100vh;
+    background: linear-gradient(180deg, #0f1014 0%, #0c0d11 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    transition: width 0.3s ease;
+    z-index: 1000;
+}
+
+/* EXPAND ON HOVER */
+.navbar:hover {
+    width: 220px;
+}
+
+/* LOGO */
+.logo {
+    margin-bottom: 50px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f80e0;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+/* MENU ITEM */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #9ca3af;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 0 10px;
+}
+
+/* ICON STYLE */
+.menu i {
+    font-size: 20px;
+    min-width: 25px;
+    text-align: center;
+}
+
+/* TEXT HIDDEN DEFAULT */
+.menu span {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* SHOW TEXT WHEN SIDEBAR EXPANDS */
+.navbar:hover .menu span {
+    opacity: 1;
+}
+
+/* HOVER EFFECT */
+.menu:hover {
+    background-color: rgba(31, 128, 224, 0.15);
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+/* ACTIVE LINK (Optional - add class="active") */
+.menu.active {
+    background-color: rgba(31, 128, 224, 0.25);
+    color: #ffffff;
+}
+
+/* SCROLL FIX */
+.nav-links {
+    overflow-y: auto;
+}
