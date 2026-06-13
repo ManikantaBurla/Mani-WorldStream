@@ -37,24 +37,24 @@ include '../../backend/middleware/auth_check.php';
     <!-- SLIDE 1 -->
     <div class="slide active">
 
-        <img src="../images/Mahabharat.jpg" alt="Banner">
+        <img src="../images/Solo-Leveling.jpg" alt="Banner">
 
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
 
-            <span class="tag">EPIC SERIES</span>
+            <span class="tag">Arise</span>
 
-            <h1>Mahabharat</h1>
+            <h1>Solo Leveling</h1>
 
             <p>
-                The legendary Indian epic of destiny, war and dharma.
+                A young man discovers a hidden world of monsters and becomes a powerful hunter.
             </p>
 
             <div class="hero-buttons">
 
                 <button class="watch-btn"
-                    onclick="openTrailer('https://www.youtube.com/embed/9YNponERL3A')">
+                    onclick="openTrailer('https://www.youtube.com/embed/LrNvF8gcJPM')">
 
                     ▶ Watch Trailer
 
