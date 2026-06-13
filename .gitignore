@@ -1,0 +1,17 @@
+# 1. Secret Environment Files
+.env
+
+# 2. Local Configuration & XAMPP files
+/config/db_local.php
+xampp/
+nbproject/
+
+# 3. System Files
+.DS_Store
+Thumbs.db
+
+# 4. Dependency Folders (If you start using Composer)
+vendor/
+
+# 5. Log Files
+*.log
