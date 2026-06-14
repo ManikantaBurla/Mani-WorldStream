@@ -1,7 +1,8 @@
 <?php
 session_start();
 $conn = null;
-require_once __DIR__ . "/../config/db.php";
+// Use this globally in all your PHP files
+require_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
 if (!$conn) {
     die("Database connection not established.");
