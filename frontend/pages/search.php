@@ -9,8 +9,8 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-     <link rel="stylesheet" href="../css/search.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
+     <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
     
     <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
 
@@ -39,7 +39,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
 
     </div>
 
-    <script src="../js/home.js"></script>
+    <script src="/js/search.js"></script>
 
 </body>
 </html>

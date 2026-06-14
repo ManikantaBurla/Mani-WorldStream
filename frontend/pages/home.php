@@ -9,8 +9,8 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Mani-WorldStream</title>
 
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
 
     <script src="https://kit.fontawesome.com/f003957674.js" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
     <!-- SLIDE 1 -->
     <div class="slide active">
 
-        <img src="../images/Solo-Leveling.jpg" alt="Banner">
+        <img src="/images/Solo-Leveling.jpg" alt="Banner">
 
         <div class="hero-overlay"></div>
 
@@ -74,7 +74,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
     <!-- SLIDE 2 -->
     <div class="slide">
 
-        <img src="../images/Spider-man.jpg" alt="Banner">
+        <img src="/images/Spider-man.jpg" alt="Banner">
 
         <div class="hero-overlay"></div>
 
@@ -111,7 +111,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
     <!-- SLIDE 3 -->
     <div class="slide">
 
-        <img src="../images/avatar.jpg" alt="Banner">
+        <img src="/images/avatar.jpg" alt="Banner">
 
         <div class="hero-overlay"></div>
 
@@ -163,7 +163,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
         <!-- CARD 1 -->
         <div class="movie-card wide">
 
-            <img src="../images/avengers-endgame.jpg" alt="Movie">
+            <img src="/images/avengers-endgame.jpg" alt="Movie">
 
             <div class="movie-overlay">
 
@@ -186,7 +186,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
         <!-- CARD 2 -->
         <div class="movie-card wide">
 
-            <img src="../images/Ramayana.jpg" alt="Movie">
+            <img src="/images/Ramayana.jpg" alt="Movie">
 
             <div class="movie-overlay">
 
@@ -209,7 +209,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
         <!-- CARD 3 -->
         <div class="movie-card wide">
 
-            <img src="../images/Kalki.jpeg" alt="Movie">
+            <img src="/images/Kalki.jpeg" alt="Movie">
 
             <div class="movie-overlay">
 
@@ -232,7 +232,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
         <!-- CARD 4 -->
         <div class="movie-card wide">
 
-            <img src="../images/avatar2.jpg" alt="Movie">
+            <img src="/images/avatar2.jpg" alt="Movie">
 
             <div class="movie-overlay">
 
@@ -272,7 +272,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
         <!-- CARD 1 -->
         <div class="movie-card">
 
-            <img src="../images/Interstellar.jpeg" alt="Movie">
+            <img src="/images/Interstellar.jpeg" alt="Movie">
 
             <div class="movie-overlay">
 
@@ -291,7 +291,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
         <!-- CARD 2 -->
         <div class="movie-card">
 
-            <img src="../images/Bahubali.jpeg" alt="Movie">
+            <img src="/images/Bahubali.jpeg" alt="Movie">
 
             <div class="movie-overlay">
 
@@ -310,7 +310,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
         <!-- CARD 3 -->
         <div class="movie-card">
 
-            <img src="../images/JungleBook.jpeg" alt="Movie">
+            <img src="/images/JungleBook.jpeg" alt="Movie">
 
             <div class="movie-overlay">
 
@@ -329,7 +329,7 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
         <!-- CARD 4 -->
         <div class="movie-card">
 
-            <img src="../images/Titanic.jpeg" alt="Movie">
+            <img src="/images/Titanic.jpeg" alt="Movie">
 
             <div class="movie-overlay">
 

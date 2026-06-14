@@ -6,8 +6,8 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
 <head>
   <meta charset="UTF-8">
   <title>User-Profile | Mani-WorldStream</title>
-   <link rel="stylesheet" href="../css/profile.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
+   <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
   <script src="https://kit.fontawesome.com/f003957674.js" crossorigin="anonymous"></script>
 
@@ -32,6 +32,6 @@ include __DIR__ . '/../../backend/middleware/auth_check.php';
 <div>
   <a href="sign-in">sign-in if you are new</a> 
 
-<script src="../js/home.js"></script>
+<script src="/js/profile.js"></script>
 </body>
 </html>

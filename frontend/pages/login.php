@@ -38,7 +38,7 @@ if (isset($_SESSION['user'])) {
     <meta charset="UTF-8">
     <title>Login | Mani-WorldStream</title>
 
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
     <script src="https://kit.fontawesome.com/f003957674.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
 </head>
@@ -66,6 +66,6 @@ if (isset($_SESSION['user'])) {
 </div>
 
 
-<script src="../js/login.js"></script>
+<script src="/js/login.js"></script>
 </body>
 </html>

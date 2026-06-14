@@ -3,7 +3,7 @@
 <head> 
 
 <title>Sign Up | Mani-WorldStream</title>
-<link rel="stylesheet" href="../css/register.css">
+<link rel="stylesheet" href="/css/register.css">
 
 
 </head>

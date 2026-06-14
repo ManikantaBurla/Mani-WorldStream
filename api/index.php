@@ -6,16 +6,22 @@ error_reporting(E_ALL);
 
 session_start();
 
+$request_uri = $_SERVER['REQUEST_URI'];
+
 // Check if user is logged in
 if (isset($_SESSION['user'])) {
-    // If already logged in and trying to go to login, send to home
-    header("Location: /frontend/pages/home.php");
+    // If already logged in and not on home page, send to home
+    if ($request_uri !== '/frontend/pages/home.php') {
+        header("Location: /frontend/pages/home.php");
+        exit(); // Exit immediately after header
+    }
 } else {
-    // If not logged in, send to login
-    // IMPORTANT: Make sure we aren't already on the login page to avoid the loop!
-    if ($_SERVER['REQUEST_URI'] !== '/frontend/pages/login.php') {
+    // If not logged in and not on login page, send to login
+    if ($request_uri !== '/frontend/pages/login.php') {
         header("Location: /frontend/pages/login.php");
+        exit(); // Exit immediately after header
     }
 }
-exit();
+
+// NOTE: Do not put an exit() here if you want the rest of the page to load!
 ?>
