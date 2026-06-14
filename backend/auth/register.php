@@ -12,7 +12,7 @@ $sql = "INSERT INTO users (username, password)
 
 if(mysqli_query($conn, $sql)){
     
-    header("Location: /WorldStream/frontend/pages/login.php");
+    header("Location: /frontend/pages/login.php");
     
 }else{
     

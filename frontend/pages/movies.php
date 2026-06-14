@@ -17,7 +17,7 @@ include '../../backend/middleware/auth_check.php';
     <link rel="stylesheet" href="../css/movies.css">
     <link rel="stylesheet" href="../css/sidebar.css">
 
-    <link rel="icon" type="image/jpeg" href="ManiWorldStream-Fevicon.png">
+    <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
 
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">

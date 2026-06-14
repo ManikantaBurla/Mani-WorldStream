@@ -18,12 +18,12 @@ if (mysqli_num_rows($result) > 0) {
 
     $_SESSION['user'] = $username;
 
-    header("Location: /WorldStream/frontend/pages/home.php");
+    header("Location: /frontend/pages/home.php");
     exit();
 
 } else {
 
-    header("Location: /WorldStream/frontend/pages/login.php?error=1");
+    header("Location: /frontend/pages/login.php?error=1");
     exit();
 }
 

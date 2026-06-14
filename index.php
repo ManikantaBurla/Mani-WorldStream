@@ -2,8 +2,9 @@
 session_start();
 
 if (isset($_SESSION['user'])) {
-    header("Location: http://localhost/WorldStream/frontend/pages/home.php");
+    header("Location: /frontend/pages/home.php"); // Use relative path
 } else {
-    header("Location: http://localhost/WorldStream/frontend/pages/login.php");
+    header("Location: /frontend/pages/login.php"); // Use relative path
 }
 exit;
+?>

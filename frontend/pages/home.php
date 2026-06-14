@@ -11,7 +11,7 @@ include '../../backend/middleware/auth_check.php';
 
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="icon" type="image/jpeg" href="ManiWorldStream-Fevicon.png">
+    <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
 
     <script src="https://kit.fontawesome.com/f003957674.js" crossorigin="anonymous"></script>
 </head>

@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="register-container">
-<form action="/WorldStream/backend/auth/register.php" method="POST">
+<form action="/backend/auth/register.php" method="POST">
     <h2>Create Account</h2>
 
     <input type="text" name="username" placeholder="Username" required>

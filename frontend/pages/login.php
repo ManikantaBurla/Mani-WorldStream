@@ -14,7 +14,7 @@ if (isset($_SESSION['user'])) {
 
     <link rel="stylesheet" href="../css/login.css">
     <script src="https://kit.fontawesome.com/f003957674.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/jpeg" href="ManiWorldStream-Fevicon.png">
+    <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
 </head>
 
 <body>
@@ -23,7 +23,7 @@ if (isset($_SESSION['user'])) {
     <h2>Login or Sign Up</h2>
     <p>Enter your email or mobile number</p>
 
-    <form action="/WorldStream/backend/auth/login_handler.php" method="POST" onsubmit="return validateLogin()">
+    <form action="/backend/auth/login_handler.php" method="POST" onsubmit="return validateLogin()">
 
         <input type="text" name="username" id="username" placeholder="Email or Mobile Number">
 
