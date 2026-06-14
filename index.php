@@ -1,5 +1,5 @@
 <?php
-// Redirect visitors to your login page
-header("Location: /api/login.php");
+// index.php in root
+header("Location: /frontend/pages/login.php");
 exit;
 ?>
