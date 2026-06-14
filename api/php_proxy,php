@@ -1,0 +1,15 @@
+<?php
+// api/php_proxy.php
+// This acts as a bridge to execute PHP files outside the /api folder
+$requested_path = $_GET['path'] ?? '';
+$full_path = __DIR__ . '/..' . $requested_path;
+
+if (file_exists($full_path) && pathinfo($full_path, PATHINFO_EXTENSION) === 'php') {
+    // Session must be started here so the included page can use $_SESSION
+    session_start();
+    include $full_path;
+} else {
+    header("HTTP/1.0 404 Not Found");
+    echo "File not found or invalid type.";
+}
+?>
