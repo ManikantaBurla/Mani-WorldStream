@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="register-container">
-<form action="/backend/auth/register.php" method="POST">
+<form action="/api/register.php" method="POST">
     <h2>Create Account</h2>
 
     <input type="text" name="username" placeholder="Username" required>

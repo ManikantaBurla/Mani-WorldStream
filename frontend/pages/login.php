@@ -23,7 +23,7 @@ if (isset($_SESSION['user'])) {
     <h2>Login or Sign Up</h2>
     <p>Enter your email or mobile number</p>
 
-    <form action="/backend/auth/login_handler.php" method="POST" onsubmit="return validateLogin()">
+    <form action="/api/login_handler.php" method="POST" onsubmit="return validateLogin()">
 
         <input type="text" name="username" id="username" placeholder="Email or Mobile Number">
 

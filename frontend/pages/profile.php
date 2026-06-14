@@ -1,5 +1,5 @@
 <?php
-include '../../backend/middleware/auth_check.php';
+include __DIR__ . '/../../backend/middleware/auth_check.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
