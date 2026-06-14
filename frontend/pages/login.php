@@ -1,4 +1,23 @@
 <?php
+
+// CHECKPOINT 1
+echo "Checkpoint 1: Script started.<br>";
+flush(); // Forces the message to show in your browser immediately
+
+// CHECKPOINT 2
+$db_path = dirname(__DIR__, 2) . '/config/db.php';
+echo "Checkpoint 2: Path calculated is " . $db_path . "<br>";
+flush();
+
+if (!file_exists($db_path)) {
+    die("CRITICAL ERROR: File does not exist at " . $db_path);
+}
+
+require_once $db_path;
+echo "Checkpoint 3: Database file included successfully.<br>";
+flush();
+
+// ... the rest of your code ...
 session_start();
 
 // Force display of errors so we can see what's wrong
