@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+// Force display of errors so we can see what's wrong
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+echo "<h1>If you see this, the PHP is working!</h1>";
+// ... rest of your code ...
 if (isset($_SESSION['user'])) {
     header("Location: home.php");
     exit();
