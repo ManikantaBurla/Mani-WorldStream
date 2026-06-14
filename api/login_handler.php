@@ -2,7 +2,7 @@
 session_start();
 
 // 1. Correct include path
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/backend/middleware/auth_check.php';
 
 // 2. Ensure $conn is globally available
 global $conn;

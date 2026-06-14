@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../../backend/middleware/auth_check.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/path/to/your/file.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

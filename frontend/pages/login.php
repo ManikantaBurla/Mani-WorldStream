@@ -1,11 +1,10 @@
 <?php
-
 // CHECKPOINT 1
 echo "Checkpoint 1: Script started.<br>";
-flush(); // Forces the message to show in your browser immediately
+flush(); 
 
-// CHECKPOINT 2
-$db_path = dirname(__DIR__, 2) . '/config/db.php';
+// CHECKPOINT 2: Using the absolute DOCUMENT_ROOT path
+$db_path = $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 echo "Checkpoint 2: Path calculated is " . $db_path . "<br>";
 flush();
 
@@ -17,17 +16,14 @@ require_once $db_path;
 echo "Checkpoint 3: Database file included successfully.<br>";
 flush();
 
-// ... the rest of your code ...
-session_start();
-
-// Force display of errors so we can see what's wrong
+// Force display of errors
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-echo "<h1>If you see this, the PHP is working!</h1>";
-// ... rest of your code ...
+session_start();
+
 if (isset($_SESSION['user'])) {
-    header("Location: home.php");
+    header("Location: /frontend/pages/home.php");
     exit();
 }
 ?>
@@ -37,26 +33,20 @@ if (isset($_SESSION['user'])) {
 <head>
     <meta charset="UTF-8">
     <title>Login | Mani-WorldStream</title>
-
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/frontend/css/login.css">
     <script src="https://kit.fontawesome.com/f003957674.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
 </head>
 
 <body>
-
 <div class="login-container">
     <h2>Login or Sign Up</h2>
     <p>Enter your email or mobile number</p>
 
-    <form action="/api/login_handler.php" method="POST" onsubmit="return validateLogin()">
-
-        <input type="text" name="username" id="username" placeholder="Email or Mobile Number">
-
-        <input type="password" name="password" id="password" placeholder="Password">
-
+    <form action="login_handler.php" method="POST">
+        <input type="text" name="username" id="username" placeholder="Email or Mobile Number" required>
+        <input type="password" name="password" id="password" placeholder="Password" required>
         <button type="submit">Continue</button>
-
     </form>
 
     <span class="terms">
@@ -64,8 +54,6 @@ if (isset($_SESSION['user'])) {
     </span>
     <p1>New user? <a href="register.php">Create account</a></p1>
 </div>
-
-
-<script src="/js/login.js"></script>
+<script src="/frontend/js/login.js"></script>
 </body>
 </html>
