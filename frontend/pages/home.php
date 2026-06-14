@@ -1,7 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/path/to/your/file.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/backend/middleware/auth_check.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
