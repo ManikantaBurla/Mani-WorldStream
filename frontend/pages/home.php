@@ -104,6 +104,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/backend/middleware/auth_check.php';
 <script>
 function openTrailer(link){
     document.getElementById("trailerModal").style.display = "flex";
+    
+    // We keep mute=1 to ensure the browser allows the iframe to play.
+    // If you remove mute=1, browsers will likely block the video entirely.
     document.getElementById("trailerFrame").src = link + "?autoplay=1&mute=1&rel=0";
 }
 function closeTrailer(){
