@@ -1,6 +1,8 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/path/to/your/file.php';
+// Corrected absolute path for auth check
+require_once $_SERVER['DOCUMENT_ROOT'] . '/backend/middleware/auth_check.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,38 +10,32 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/path/to/your/file.php';
     <title>Search | Mani-WorldStream</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS -->
-     <link rel="stylesheet" href="/css/search.css">
-    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/frontend/css/search.css">
+    <link rel="stylesheet" href="/frontend/css/sidebar.css">
     
     <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
 
-    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f003957674.js" crossorigin="anonymous"></script>
 </head>
 <body>
        
-    <!-- Sidebar will be loaded by JS -->
-    <?php include 'sidebar.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/frontend/pages/sidebar.php'; ?>
 
     <div class="search-page">
 
-        <!-- Search Bar -->
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" id="searchInput" placeholder="Search Movies, Shows, Sports">
         </div>
 
-        <!-- Results -->
         <h3 class="section-title">Results</h3>
 
         <div class="search-results" id="results">
-            <!-- Cards injected by JS -->
-        </div>
+            </div>
 
     </div>
 
-    <script src="/js/search.js"></script>
+    <script src="/frontend/js/search.js"></script>
 
 </body>
 </html>
