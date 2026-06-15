@@ -1,30 +1,22 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/path/to/your/file.php';
+// Corrected absolute path for auth check
+require_once $_SERVER['DOCUMENT_ROOT'] . '/backend/middleware/auth_check.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <title>Movies | Mani-WorldStream</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/movies.css">
-    <link rel="stylesheet" href="/css/sidebar.css">
-
+    <link rel="stylesheet" href="/frontend/css/movies.css">
+    <link rel="stylesheet" href="/frontend/css/sidebar.css">
     <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
 
-    <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Icons -->
     <script src="https://kit.fontawesome.com/f003957674.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>

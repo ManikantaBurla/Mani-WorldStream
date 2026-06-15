@@ -1,6 +1,8 @@
 <?php
+// Corrected absolute path for auth check
 require_once $_SERVER['DOCUMENT_ROOT'] . '/backend/middleware/auth_check.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +10,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/backend/middleware/auth_check.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Mani-WorldStream</title>
 
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/frontend/css/home.css">
+    <link rel="stylesheet" href="/frontend/css/sidebar.css">
     <link rel="icon" type="image/jpeg" href="/frontend/assets/ManiWorldStream-Fevicon.png">
 
     <script src="https://kit.fontawesome.com/f003957674.js" crossorigin="anonymous"></script>
