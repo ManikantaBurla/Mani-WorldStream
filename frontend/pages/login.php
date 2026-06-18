@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// 1. Correct absolute path to reach db.php from /frontend/pages/
+// Correct absolute path to reach db.php from /frontend/pages/
 $db_path = $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
 if (!file_exists($db_path)) {
@@ -34,10 +34,10 @@ if (isset($_SESSION['user'])) {
 <body>
 <div class="login-container">
     <h2>Login or Sign Up</h2>
-    <p>Enter your email or mobile number</p>
+    <p>Enter your credentials</p>
 
     <form action="/api/login_handler.php" method="POST">
-        <input type="text" name="username" id="username" placeholder="Email or Mobile Number" required>
+        <input type="text" name="username" id="username" placeholder="Username" required>
         <input type="password" name="password" id="password" placeholder="Password" required>
         <button type="submit">Continue</button>
     </form>

@@ -5,7 +5,6 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
 // 2. Ensure we use the $conn variable defined in db.php
-// Since db.php is required here, $conn is available in this scope.
 if (!isset($conn) || !$conn) {
     error_log("Database connection variable is not set or null.");
     die("Database connection failed. Please contact support.");
@@ -23,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $stmt->get_result();
 
         if ($row = $result->fetch_assoc()) {
-            // Verify password
-            if ($password === $row['password']) {
+            // THE FIX: Use password_verify to check the hash
+            if (password_verify($password, $row['password'])) {
                 $_SESSION['user'] = $username;
                 header("Location: /frontend/pages/home.php");
                 exit();
