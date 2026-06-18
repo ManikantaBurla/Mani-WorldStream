@@ -32,13 +32,10 @@ if (isset($_SESSION['user'])) {
 </head>
 
 <body>
-<div class="login-container">
+<<div class="login-container">
     <h2>Login or Sign Up</h2>
-    <p>Enter your credentials</p>
-
-    <form action="/api/login_handler.php" method="POST">
-        <input type="text" name="username" id="username" placeholder="Username" required>
-        <input type="password" name="password" id="password" placeholder="Password" required>
+    <p>Enter your username</p> <form action="/api/login_handler.php" method="POST">
+        <input type="text" name="username" id="username" placeholder="Username" required> <input type="password" name="password" id="password" placeholder="Password" required>
         <button type="submit">Continue</button>
     </form>
 
@@ -47,7 +44,6 @@ if (isset($_SESSION['user'])) {
     </span>
     <p1>New user? <a href="/frontend/pages/register.php">Create account</a></p1>
 </div>
-
 <script src="/frontend/js/login.js"></script>
 </body>
 </html>
