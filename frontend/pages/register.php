@@ -22,12 +22,31 @@ if (isset($_SESSION['user'])) {
     <h2>Create an Account</h2>
     <p>Join Mani-WorldStream today</p>
 
-    <form action="/api/register.php" method="POST">
-        <input type="text" name="username" id="username" placeholder="Choose a Username" required>
-        <input type="password" name="password" id="password" placeholder="Choose a Password" required>
+   <form action="/api/register.php" method="POST">
+        
+        <input 
+            type="text" 
+            name="username" 
+            id="username" 
+            placeholder="Username (Characters only)" 
+            pattern="[A-Za-z]+" 
+            title="Please enter only letters (no numbers or spaces)"
+            required
+        >
+        
+        <input 
+            type="password" 
+            name="password" 
+            id="password" 
+            placeholder="Password (Numbers only)" 
+            pattern="[0-9]+" 
+            inputmode="numeric"
+            title="Please enter only numbers"
+            required
+        >
+        
         <button type="submit">Register</button>
     </form>
-
     <p1>Already have an account? <a href="/frontend/pages/login.php">Login here</a></p1>
 </div>
 </body>
