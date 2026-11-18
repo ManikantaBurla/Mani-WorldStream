@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mani-WorldStream | Interactive Globe</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'assets/favicon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    {% include 'sidebar.html' %}
+
+    <main class="hero-container">
+        <section class="text-section left-content">
+            <h1 class="elegant-title">Top Picks</h1>
+            <div class="badge"><span class="dot"></span> Trending Globally</div>
+            <p class="description">Discover a universe of entertainment. Dive into the most popular, globally trending movies, shows, and music handpicked just for you.</p>
+        </section>
+
+        <!-- FULL 3D GLOBE (18 Panels) -->
+        <section class="scene">
+            <div class="sphere" id="globe">
+                <!-- Middle Ring (Equator) -->
+                <div class="panel" style="--ry: 0deg; --rx: 0deg;" data-youtube-id="5PSNL1qE6VY"><img src="https://picsum.photos/seed/mid1/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 60deg; --rx: 0deg;" data-youtube-id="zSWdZVtXT7E"><img src="https://picsum.photos/seed/mid2/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 120deg; --rx: 0deg;" data-youtube-id="TcMBFSGVi1c"><img src="https://picsum.photos/seed/mid3/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 180deg; --rx: 0deg;" data-youtube-id="d9MyW72ELq0"><img src="https://picsum.photos/seed/mid4/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 240deg; --rx: 0deg;" data-youtube-id="sOEg_YZQsTI"><img src="https://picsum.photos/seed/mid5/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 300deg; --rx: 0deg;" data-youtube-id="5mkm22yO-bs"><img src="https://picsum.photos/seed/mid6/500/750" alt="Movie"></div>
+
+                <!-- Top Ring (Tilted Up) -->
+                <div class="panel" style="--ry: 30deg; --rx: 35deg;" data-youtube-id="5PSNL1qE6VY"><img src="https://picsum.photos/seed/top1/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 90deg; --rx: 35deg;" data-youtube-id="zSWdZVtXT7E"><img src="https://picsum.photos/seed/top2/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 150deg; --rx: 35deg;" data-youtube-id="TcMBFSGVi1c"><img src="https://picsum.photos/seed/top3/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 210deg; --rx: 35deg;" data-youtube-id="d9MyW72ELq0"><img src="https://picsum.photos/seed/top4/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 270deg; --rx: 35deg;" data-youtube-id="sOEg_YZQsTI"><img src="https://picsum.photos/seed/top5/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 330deg; --rx: 35deg;" data-youtube-id="5mkm22yO-bs"><img src="https://picsum.photos/seed/top6/500/750" alt="Movie"></div>
+
+                <!-- Bottom Ring (Tilted Down) -->
+                <div class="panel" style="--ry: 30deg; --rx: -35deg;" data-youtube-id="5PSNL1qE6VY"><img src="https://picsum.photos/seed/bot1/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 90deg; --rx: -35deg;" data-youtube-id="zSWdZVtXT7E"><img src="https://picsum.photos/seed/bot2/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 150deg; --rx: -35deg;" data-youtube-id="TcMBFSGVi1c"><img src="https://picsum.photos/seed/bot3/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 210deg; --rx: -35deg;" data-youtube-id="d9MyW72ELq0"><img src="https://picsum.photos/seed/bot4/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 270deg; --rx: -35deg;" data-youtube-id="sOEg_YZQsTI"><img src="https://picsum.photos/seed/bot5/500/750" alt="Movie"></div>
+                <div class="panel" style="--ry: 330deg; --rx: -35deg;" data-youtube-id="5mkm22yO-bs"><img src="https://picsum.photos/seed/bot6/500/750" alt="Movie"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Content Rows with Static Images -->
+    <div class="content-sections">
+        
+        <section class="media-row">
+            <h2 class="row-title">Latest Releases</h2>
+            <div class="row-container">
+                <div class="movie-card" data-youtube-id="5PSNL1qE6VY"><img src="{% static 'images/avatar.jpg' %}" alt="Poster"></div>
+                <div class="movie-card" data-youtube-id="zSWdZVtXT7E"><img src="{% static 'images/interstellar.jpeg' %}" alt="Poster"></div>
+                <div class="movie-card" data-youtube-id="TcMBFSGVi1c"><img src="{% static 'images/avengers-endgame.jpg' %}" alt="Poster"></div>
+                <div class="movie-card" data-youtube-id="d9MyW72ELq0"><img src="{% static 'images/avatar2.jpg' %}" alt="Poster"></div>
+                <div class="movie-card" data-youtube-id="sOEg_YZQsTI"><img src="{% static 'images/Bahubali.jpeg' %}" alt="Poster"></div>
+                <div class="movie-card" data-youtube-id="5mkm22yO-bs"><img src="{% static 'images/JungleBook.jpeg' %}" alt="Poster"></div>
+            </div>
+        </section>
+
+        <section class="media-row">
+            <h2 class="row-title">Trending Globally</h2>
+            <div class="row-container">
+                <div class="movie-card" data-youtube-id="TcMBFSGVi1c"><img src="{% static 'images/avengers-endgame.jpg' %}" alt="Poster"></div>
+                <div class="movie-card" data-youtube-id="5mkm22yO-bs"><img src="{% static 'images/JungleBook.jpeg' %}" alt="Poster"></div>
+                <div class="movie-card" data-youtube-id="5PSNL1qE6VY"><img src="{% static 'images/avatar.jpg' %}" alt="Poster"></div>
+                <div class="movie-card" data-youtube-id="sOEg_YZQsTI"><img src="{% static 'images/Bahubali.jpeg' %}" alt="Poster"></div>
+                <div class="movie-card" data-youtube-id="zSWdZVtXT7E"><img src="{% static 'images/interstellar.jpeg' %}" alt="Poster"></div>
+                <div class="movie-card" data-youtube-id="d9MyW72ELq0"><img src="{% static 'images/avatar2.jpg' %}" alt="Poster"></div>
+            </div>
+        </section>
+
+        <section class="media-row">
+            <h2 class="row-title live-title"><span class="live-dot"></span> Live Now</h2>
+            <div class="row-container">
+                <div class="movie-card live-card" data-youtube-id="zSWdZVtXT7E"><img src="{% static 'images/interstellar.jpeg' %}" alt="Live"></div>
+                <div class="movie-card live-card" data-youtube-id="d9MyW72ELq0"><img src="{% static 'images/avatar2.jpg' %}" alt="Live"></div>
+                <div class="movie-card live-card" data-youtube-id="sOEg_YZQsTI"><img src="{% static 'images/Bahubali.jpeg' %}" alt="Live"></div>
+                <div class="movie-card live-card" data-youtube-id="5PSNL1qE6VY"><img src="{% static 'images/avatar.jpg' %}" alt="Live"></div>
+            </div>
+        </section>
+        
+    </div>
+
+    <!-- YouTube Modal -->
+    <div class="modal" id="video-modal">
+        <div class="video-container">
+            <button class="close-btn" id="close-modal"><i class="fas fa-times"></i></button>
+            <div class="iframe-wrapper">
+                <iframe id="youtube-player" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const globe = document.getElementById('globe');
+        const panels = document.querySelectorAll('.panel, .movie-card');
+        const modal = document.getElementById('video-modal');
+        const youtubePlayer = document.getElementById('youtube-player');
+        const closeBtn = document.getElementById('close-modal');
+        
+        let isDragging = false, startX, startY, currentX = -10, currentY = 0;
+        const autoRotateSpeed = 0.15; 
+
+        function animateGlobe() {
+            if (!isDragging) currentY += autoRotateSpeed; 
+            globe.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+            requestAnimationFrame(animateGlobe);
+        }
+        animateGlobe();
+
+        document.addEventListener('mousedown', (e) => {
+            if (e.target.closest('.panel') || e.target.closest('.sidebar')) return;
+            isDragging = true; startX = e.pageX; startY = e.pageY; document.body.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            let deltaX = e.pageX - startX, deltaY = e.pageY - startY;
+            currentX -= deltaY * 0.3; currentY += deltaX * 0.3;
+            startX = e.pageX; startY = e.pageY;
+        });
+
+        document.addEventListener('mouseup', () => { isDragging = false; document.body.style.cursor = 'default'; });
+
+        panels.forEach(panel => {
+            panel.addEventListener('click', () => {
+                const videoId = panel.getAttribute('data-youtube-id');
+                youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+                modal.classList.add('active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            setTimeout(() => { youtubePlayer.src = ""; }, 400); 
+        });
+    </script>
+</body>
+</html>
+
+<!--python manage.py runserver -->

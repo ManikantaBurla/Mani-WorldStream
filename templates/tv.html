@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mani-WorldStream | TV Series</title>
+    <link rel="icon" type="image/png" href="{% static 'assets/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/tv.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    {% include 'sidebar.html' %}
+
+    <div class="tv-scroll-container">
+        <!-- Channel 1 -->
+        <section class="tv-channel">
+            <img class="channel-bg" src="{% static 'images/avatar.jpg' %}" alt="Background">
+            <div class="channel-content">
+                <div class="network-badge">HBO Original</div>
+                <h1 class="show-title">THE LAST FRONTIER</h1>
+                <p class="show-desc">Season 3 streaming now. A gripping tale of survival at the edge of the known universe.</p>
+                <button class="watch-btn"><i class="fas fa-play"></i> Watch Episode 1</button>
+            </div>
+        </section>
+
+        <!-- Channel 2 -->
+        <section class="tv-channel">
+            <img class="channel-bg" src="{% static 'images/interstellar.jpeg' %}" alt="Background">
+            <div class="channel-content">
+                <div class="network-badge">Netflix Exclusive</div>
+                <h1 class="show-title">NEON NIGHTS</h1>
+                <p class="show-desc">A cyber-detective navigates the glowing underworld of a futuristic metropolis.</p>
+                <button class="watch-btn"><i class="fas fa-play"></i> Resume S2:E4</button>
+            </div>
+        </section>
+
+        <!-- Channel 3 -->
+        <section class="tv-channel">
+            <img class="channel-bg" src="{% static 'images/avengers-endgame.jpg' %}" alt="Background">
+            <div class="channel-content">
+                <div class="network-badge">Prime Video</div>
+                <h1 class="show-title">HEROES FALL</h1>
+                <p class="show-desc">When the protectors of Earth vanish, a new generation must step up to the mantle.</p>
+                <button class="watch-btn"><i class="fas fa-play"></i> Add to Watchlist</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

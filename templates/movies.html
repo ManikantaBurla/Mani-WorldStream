@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mani-WorldStream | Movies</title>
+    <link rel="stylesheet" href="{% static 'css/movies.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'assets/favicon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    {% include 'sidebar.html' %}
+
+    <!-- 3D Hero Section -->
+    <div class="coverflow-hero">
+        <div class="page-header">
+            <h1 class="glitch" data-text="MOVIES">MOVIES</h1>
+            <p>Immerse yourself in cinematic masterpieces.</p>
+        </div>
+        <div class="coverflow-container">
+            <div class="coverflow-slider" id="slider">
+                <div class="cover-item"><img src="{% static 'images/avatar.jpg' %}" alt="Poster"></div>
+                <div class="cover-item"><img src="{% static 'images/interstellar.jpeg' %}" alt="Poster"></div>
+                <div class="cover-item active"><img src="{% static 'images/avengers-endgame.jpg' %}" alt="Poster"></div>
+                <div class="cover-item"><img src="{% static 'images/avatar2.jpg' %}" alt="Poster"></div>
+                <div class="cover-item"><img src="{% static 'images/Bahubali.jpeg' %}" alt="Poster"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scrolling Rows -->
+    <div class="content-sections">
+        <section class="media-row">
+            <h2 class="row-title">Latest Movies</h2>
+            <div class="row-container">
+                <div class="movie-card"><img src="{% static 'images/JungleBook.jpeg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/avatar2.jpg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/interstellar.jpeg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/avengers-endgame.jpg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/Bahubali.jpeg' %}" alt="Movie"></div>
+            </div>
+        </section>
+
+        <section class="media-row">
+            <h2 class="row-title">Watched Movies</h2>
+            <div class="row-container">
+                <div class="movie-card"><img src="{% static 'images/avatar.jpg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/Bahubali.jpeg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/JungleBook.jpeg' %}" alt="Movie"></div>
+            </div>
+        </section>
+
+        <section class="media-row">
+            <h2 class="row-title">Top Rating Movies</h2>
+            <div class="row-container">
+                <div class="movie-card"><img src="{% static 'images/avengers-endgame.jpg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/interstellar.jpeg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/avatar.jpg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/avatar2.jpg' %}" alt="Movie"></div>
+            </div>
+        </section>
+
+        <section class="media-row">
+            <h2 class="row-title">Movies For You</h2>
+            <div class="row-container">
+                <div class="movie-card"><img src="{% static 'images/Bahubali.jpeg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/avatar2.jpg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/JungleBook.jpeg' %}" alt="Movie"></div>
+                <div class="movie-card"><img src="{% static 'images/interstellar.jpeg' %}" alt="Movie"></div>
+            </div>
+        </section>
+
+        <section class="media-row">
+            <h2 class="row-title">Genres</h2>
+            <div class="row-container genre-row">
+                <div class="genre-pill">ACTION</div>
+                <div class="genre-pill">COMEDY</div>
+                <div class="genre-pill">SCI-FI</div>
+                <div class="genre-pill">HORROR</div>
+                <div class="genre-pill">ROMANCE</div>
+                <div class="genre-pill">DOCUMENTARY</div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.cover-item');
+        let currentIndex = 2;
+
+        function updateCoverflow() {
+            items.forEach((item, index) => {
+                item.classList.remove('active', 'prev', 'next', 'far');
+                if (index === currentIndex) {
+                    item.classList.add('active');
+                } else if (index === currentIndex - 1) {
+                    item.classList.add('prev');
+                } else if (index === currentIndex + 1) {
+                    item.classList.add('next');
+                } else {
+                    item.classList.add('far');
+                }
+            });
+        }
+        items.forEach((item, index) => {
+            item.addEventListener('click', () => { currentIndex = index; updateCoverflow(); });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mani-WorldStream | News</title>
+    <link rel="icon" type="image/png" href="{% static 'assets/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/news.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    {% include 'sidebar.html' %}
+
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item"><span class="breaking">BREAKING</span> Global box office hits record high this weekend.</div>
+            <div class="ticker-item"><span class="breaking">UPDATE</span> New Sci-Fi epic 'Orbit' delayed until next year.</div>
+            <div class="ticker-item"><span class="breaking">AWARDS</span> Top streaming hits sweep the major academy categories.</div>
+            <div class="ticker-item"><span class="breaking">TECH</span> Mani-WorldStream rolls out 3D panoramic interfaces globally.</div>
+        </div>
+    </div>
+
+    <div class="news-container">
+        <h1 class="page-title">ENTERTAINMENT <span>NEWS</span></h1>
+        
+        <div class="masonry-grid">
+            <article class="news-card featured">
+                <img src="https://loremflickr.com/600/400/film,set?random=1" alt="News">
+                <div class="news-content">
+                    <span class="category">FILM</span>
+                    <h2>Director Reveals Secrets Behind The Visual Effects</h2>
+                    <p>An exclusive look into the rendering technology that brought the alien worlds to life.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://loremflickr.com/600/800/hollywood,premiere?random=2" alt="News">
+                <div class="news-content">
+                    <span class="category">INDUSTRY</span>
+                    <h2>Streaming Wars Heat Up</h2>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://loremflickr.com/600/500/music,award?random=3" alt="News">
+                <div class="news-content">
+                    <span class="category">MUSIC</span>
+                    <h2>Top 10 Soundtracks of the Decade</h2>
+                    <p>From Hans Zimmer's explosive brass to quiet acoustic melodies.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://loremflickr.com/600/450/cinema,award?random=4" alt="News">
+                <div class="news-content">
+                    <span class="category">AWARDS</span>
+                    <h2>Epic Cinema Takes the Crown</h2>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

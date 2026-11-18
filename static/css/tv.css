@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;500&display=swap');
+
+body {
+    margin: 0;
+    background-color: #050505;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Handled by scroll container */
+}
+
+/* CSS Scroll Snapping for full-screen "channel flipping" */
+.tv-scroll-container {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.tv-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.tv-channel {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    padding-left: 15vw;
+    overflow: hidden;
+}
+
+.channel-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This replaces background-size: cover */
+    filter: brightness(0.4) contrast(1.2);
+    z-index: 1;
+    transform: scale(1);
+    transition: transform 0.8s ease-out;
+}
+
+.tv-channel:hover .channel-bg {
+    transform: scale(1.05);
+}
+
+.channel-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    animation: slideUpFade 1s ease-out;
+}
+
+.network-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.show-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5rem;
+    margin: 0 0 15px 0;
+    line-height: 1;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.show-desc {
+    font-size: 1.2rem;
+    color: #c0c0c0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.watch-btn {
+    background: #e5a47e;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.watch-btn:hover {
+    background: #00e5ff;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}

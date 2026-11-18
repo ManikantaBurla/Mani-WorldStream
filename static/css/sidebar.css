@@ -1,0 +1,102 @@
+/* --- INTERACTIVE HALF-CIRCLE SIDEBAR --- */
+.sidebar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+/* Glassmorphism Trigger Button */
+.sidebar-trigger {
+    width: 40px;
+    height: 80px;
+    background: rgba(25, 25, 35, 0.4);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-left: none;
+    border-radius: 0 40px 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+    z-index: 1001;
+    position: relative;
+}
+
+.sidebar-trigger:hover {
+    width: 60px;
+    background: rgba(35, 35, 50, 0.6);
+    /* Cyan glow on hover */
+    box-shadow: 5px 0 20px rgba(0, 229, 255, 0.2);
+    border-color: rgba(0, 229, 255, 0.3);
+}
+
+/* Spinning Movie Reel Icon */
+.spinning-reel {
+    font-size: 1.5rem;
+    color: #a0a0b0;
+    animation: spin 5s linear infinite;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.sidebar-trigger:hover .spinning-reel {
+    color: #00e5ff;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Transparent Glass Menu */
+.sidebar-menu {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 250px;
+    height: 500px;
+    background: rgba(15, 15, 20, 0.6);
+    border-radius: 0 250px 250px 0;
+    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    
+    clip-path: circle(0% at 0 50%);
+    transition: clip-path 0.6s cubic-bezier(0.25, 1, 0.2, 1);
+}
+
+.sidebar.active .sidebar-menu {
+    clip-path: circle(100% at 0 50%);
+}
+
+/* Individual Icon Links */
+.menu-item {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0a0b0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translate(-50%, -50%);
+}
+
+/* Neon Active Hover State for Icons */
+.menu-item:hover {
+    background: #00e5ff;
+    color: #000;
+    border-color: #00e5ff;
+    transform: translate(-50%, -50%) scale(1.15);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.6), 0 0 30px rgba(0, 229, 255, 0.3);
+}

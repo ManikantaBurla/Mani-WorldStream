@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile - Mani-WorldStream</title>
+    <!-- Custom Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'assets/favicon.png' %}">
+    <!-- CSS & Icons -->
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Global Interactive Sidebar -->
+    {% include 'sidebar.html' %}
+
+    <div class="profile-page-wrapper">
+        <!-- Top Banner -->
+        <div class="profile-banner glass-panel">
+            <div class="user-avatar-placeholder">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="membership-info">
+                <h2>{{ request.user.username }}</h2>
+                <span class="badge"><i class="fas fa-circle" style="font-size: 8px; color: #00e5ff;"></i> Premium Orbit Member</span>
+            </div>
+        </div>
+
+        <!-- Dashboard Grid Layout -->
+        <div class="profile-grid">
+            <!-- Left Column: Stats -->
+            <div class="stats-column">
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div>
+                        <span class="stat-label">WATCH TIME</span>
+                        <h3>342 Hours</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                    <div>
+                        <span class="stat-label">FAVORITES</span>
+                        <h3>48 Saved</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon"><i class="fas fa-film"></i></div>
+                    <div>
+                        <span class="stat-label">TOP GENRE</span>
+                        <h3>Sci-Fi & Action</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Account Details & Security -->
+            <div class="account-column glass-panel">
+                <div class="section-title">
+                    <i class="fas fa-id-card"></i> Account Profile
+                </div>
+                
+                <div class="info-group">
+                    <label>Username</label>
+                    <p>{{ request.user.username }}</p>
+                </div>
+
+                <div class="info-group">
+                    <label>Email Address</label>
+                    <p>{{ request.user.email|default:"Not Provided" }}</p>
+                </div>
+
+                <!-- Logout Form with JavaScript Confirmation -->
+                <form action="{% url 'logout' %}" method="POST" id="logout-form" style="margin-top: 30px;">
+                    {% csrf_token %}
+                    <button type="button" class="cinematic-logout-btn" onclick="confirmLogout('{{ request.user.username }}')">
+                        <i class="fas fa-sign-out-alt"></i> Sign Out of Orbit
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <div class="recent-journeys glass-panel" style="margin-top: 25px;">
+            <h3>Recent Journeys</h3>
+            <div class="journey-item">
+                <i class="fas fa-play-circle" style="color: #00e5ff;"></i>
+                <span>Watched <strong>Interstellar</strong></span>
+                <span class="time-ago">2 hrs ago</span>
+            </div>
+            <div class="journey-item">
+                <i class="fas fa-music" style="color: #ff0055;"></i>
+                <span>Listened to <strong>Pop Mix</strong></span>
+                <span class="time-ago">1 day ago</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Alert Confirmation -->
+    <script>
+        function confirmLogout(username) {
+            const confirmed = confirm(`Are you sure you want to logout, ${username}?`);
+            if (confirmed) {
+                document.getElementById('logout-form').submit();
+            }
+        }
+    </script>
+</body>
+</html>

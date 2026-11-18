@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mani-WorldStream | Symphony</title>
+    <link rel="icon" type="image/png" href="{% static 'assets/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/music.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    {% include 'sidebar.html' %}
+    
+    <audio id="main-audio-player"></audio>
+
+    <div class="animation-wrapper" id="main-view">
+        
+        <!-- Phase 1: The Grid (Using local static images) -->
+        <div class="grid-gallery" id="grid-gallery">
+            <div class="grid-card" data-genre="pop" style="--dir-x: -1; --dir-y: -1;"><img src="{% static 'images/pop.jpg' %}"><div class="overlay"><h2>POP</h2></div></div>
+            <div class="grid-card" data-genre="rock" style="--dir-x: 0; --dir-y: -1;"><img src="{% static 'images/rock.jpg' %}"><div class="overlay"><h2>ROCK</h2></div></div>
+            <div class="grid-card" data-genre="jazz" style="--dir-x: 1; --dir-y: -1;"><img src="{% static 'images/jazz.jpg' %}"><div class="overlay"><h2>JAZZ</h2></div></div>
+            <div class="grid-card" data-genre="hiphop" style="--dir-x: -1; --dir-y: 1;"><img src="{% static 'images/hiphop.jpg' %}"><div class="overlay"><h2>HIP HOP</h2></div></div>
+            <div class="grid-card" data-genre="classical" style="--dir-x: 0; --dir-y: 1;"><img src="{% static 'images/classical.jpg' %}"><div class="overlay"><h2>CLASSICAL</h2></div></div>
+            <div class="grid-card" data-genre="electronic" style="--dir-x: 1; --dir-y: 1;"><img src="{% static 'images/electronic.jpg' %}"><div class="overlay"><h2>ELECTRONIC</h2></div></div>
+        </div>
+
+        <div class="text-layer">
+            <h1 class="split-text" id="text-left">SYMPHONY IN</h1>
+            <h1 class="split-text" id="text-right">MOTION</h1>
+        </div>
+
+        <div class="music-notes">
+            <i class="fas fa-music" id="note-1"></i>
+            <i class="fas fa-headphones" id="note-2"></i>
+            <i class="fas fa-compact-disc" id="note-3"></i>
+        </div>
+
+        <!-- Phase 2: Panoramic Ring Gallery -->
+        <div class="ring-gallery" id="ring-gallery">
+            <div class="ring-item" id="ring-item-0" style="--i: 0;" data-index="0"><img src="" alt="Banner"><div class="play-icon"><i class="fas fa-play"></i></div></div>
+            <div class="ring-item" id="ring-item-1" style="--i: 1;" data-index="1"><img src="" alt="Banner"><div class="play-icon"><i class="fas fa-play"></i></div></div>
+            <div class="ring-item" id="ring-item-2" style="--i: 2;" data-index="2"><img src="" alt="Banner"><div class="play-icon"><i class="fas fa-play"></i></div></div>
+            <div class="ring-item" id="ring-item-3" style="--i: 3;" data-index="3"><img src="" alt="Banner"><div class="play-icon"><i class="fas fa-play"></i></div></div>
+        </div>
+    </div>
+
+    <!-- Zoomed Full-Screen Player -->
+    <div class="fullscreen-player" id="fs-player">
+        <button class="close-player" id="close-player"><i class="fas fa-times"></i></button>
+        <img class="fs-bg" id="fs-bg" src="">
+        <div class="fs-content">
+            <img class="fs-album-art" id="fs-art" src="">
+            <h1 id="fs-title">Now Playing</h1>
+            <div class="fs-controls">
+                <button class="control-btn" id="btn-save" title="Save"><i class="far fa-heart"></i></button>
+                <button class="control-btn" id="btn-prev" title="Previous"><i class="fas fa-step-backward"></i></button>
+                <button class="control-btn play-pause-btn" id="btn-playpause"><i class="fas fa-pause"></i></button>
+                <button class="control-btn" id="btn-next" title="Next"><i class="fas fa-step-forward"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const staticUrl = "{% static '' %}"; 
+        
+        // Working Free Music URLs
+        const freeSong1 = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+        const freeSong2 = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3";
+        const freeSong3 = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3";
+        const freeSong4 = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3";
+
+        // Using your local static images for the banners
+        const genreDatabase = {
+            'pop': [
+                { img: staticUrl + "images/pop1.jpg", song: freeSong1 },
+                { img: staticUrl + "images/pop2.jpg", song: freeSong2 },
+                { img: staticUrl + "images/pop3.jpg", song: freeSong3 },
+                { img: staticUrl + "images/pop4.jpg", song: freeSong4 }
+            ],
+            'rock': [
+                { img: staticUrl + "images/rock1.jpg", song: freeSong1 },
+                { img: staticUrl + "images/rock2.jpg", song: freeSong2 },
+                { img: staticUrl + "images/rock3.jpg", song: freeSong3 },
+                { img: staticUrl + "images/rock4.jpg", song: freeSong4 }
+            ],
+            'jazz': [
+                { img: staticUrl + "images/jazz1.jpg", song: freeSong1 },
+                { img: staticUrl + "images/jazz2.jpg", song: freeSong2 },
+                { img: staticUrl + "images/jazz3.jpg", song: freeSong3 },
+                { img: staticUrl + "images/jazz4.jpg", song: freeSong4 }
+            ],
+            'hiphop': [
+                { img: staticUrl + "images/hiphop1.jpg", song: freeSong1 },
+                { img: staticUrl + "images/hiphop2.jpg", song: freeSong2 },
+                { img: staticUrl + "images/hiphop3.jpg", song: freeSong3 },
+                { img: staticUrl + "images/hiphop4.jpg", song: freeSong4 }
+            ],
+            'classical': [
+                { img: staticUrl + "images/classical1.jpg", song: freeSong1 },
+                { img: staticUrl + "images/classical2.jpg", song: freeSong2 },
+                { img: staticUrl + "images/classical3.jpg", song: freeSong3 },
+                { img: staticUrl + "images/classical4.jpg", song: freeSong4 }
+            ],
+            'electronic': [
+                { img: staticUrl + "images/electronic1.jpg", song: freeSong1 },
+                { img: staticUrl + "images/electronic2.jpg", song: freeSong2 },
+                { img: staticUrl + "images/electronic3.jpg", song: freeSong3 },
+                { img: staticUrl + "images/electronic4.jpg", song: freeSong4 }
+            ]
+        };
+
+        const gridCards = document.querySelectorAll('.grid-card');
+        const ringGallery = document.getElementById('ring-gallery');
+        const notes = document.querySelectorAll('.music-notes i');
+        let currentTracks = [];
+        let activeTrackIndex = 0;
+        let transitionStarted = false;
+
+        // Intro Transition Logic
+        gridCards.forEach(card => {
+            card.addEventListener('click', () => {
+                if (transitionStarted) return;
+                transitionStarted = true;
+
+                const genre = card.getAttribute('data-genre');
+                currentTracks = genreDatabase[genre] || genreDatabase['pop'];
+                
+                for (let i = 0; i < 4; i++) {
+                    const ringItem = document.getElementById(`ring-item-${i}`);
+                    const imgElement = ringItem.querySelector('img');
+                    
+                    // Fallback to default avatar if specific genre image is missing
+                    imgElement.onerror = function() {
+                        this.onerror = null; 
+                        this.src = staticUrl + "images/avatar.jpg";
+                    };
+                    
+                    imgElement.src = currentTracks[i].img;
+                }
+
+                gridCards.forEach(c => c.classList.add('fly-out'));
+                notes.forEach(n => n.classList.add('bloom'));
+
+                setTimeout(() => {
+                    document.getElementById('text-left').classList.add('center');
+                    document.getElementById('text-right').classList.add('center');
+                }, 500);
+
+                setTimeout(() => {
+                    document.getElementById('text-left').classList.remove('center');
+                    document.getElementById('text-right').classList.remove('center');
+                    document.getElementById('text-left').classList.add('split');
+                    document.getElementById('text-right').classList.add('split');
+                    ringGallery.classList.add('rise');
+                }, 2800);
+                
+                setTimeout(enableInteraction, 4500);
+            });
+        });
+
+        // Interactive Ring & Zoom Player Logic
+        function enableInteraction() {
+            const ringItems = document.querySelectorAll('.ring-item');
+            const audioPlayer = document.getElementById('main-audio-player');
+            const fsPlayer = document.getElementById('fs-player');
+            const mainView = document.getElementById('main-view');
+            let isDragging = false, startX, currentY = 0, hasDragged = false;
+
+            // Ring Dragging
+            document.body.style.cursor = 'grab';
+            
+            document.addEventListener('mousedown', (e) => {
+                if (e.target.closest('.sidebar') || fsPlayer.classList.contains('active')) return;
+                isDragging = true; hasDragged = false; startX = e.pageX;
+                document.body.style.cursor = 'grabbing';
+            });
+            document.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                let deltaX = e.pageX - startX;
+                if (Math.abs(deltaX) > 5) hasDragged = true; 
+                currentY += deltaX * 0.2;
+                ringGallery.style.transform = `translate(-50%, -50%) rotateX(-5deg) rotateY(${currentY}deg)`;
+                startX = e.pageX;
+            });
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                document.body.style.cursor = 'grab';
+            });
+
+            // Click Ring Item -> Open Zoom Player
+            ringItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    if (hasDragged) return;
+                    activeTrackIndex = parseInt(item.getAttribute('data-index'));
+                    openPlayer(activeTrackIndex);
+                });
+            });
+
+            // Player Functions
+            function openPlayer(index) {
+                const track = currentTracks[index];
+                document.getElementById('fs-bg').src = track.img;
+                document.getElementById('fs-art').src = track.img;
+                audioPlayer.src = track.song;
+                audioPlayer.play();
+                
+                document.getElementById('btn-playpause').innerHTML = '<i class="fas fa-pause"></i>';
+                mainView.style.transform = 'scale(2)'; 
+                mainView.style.opacity = '0';
+                fsPlayer.classList.add('active');
+            }
+
+            document.getElementById('close-player').addEventListener('click', () => {
+                fsPlayer.classList.remove('active');
+                mainView.style.transform = 'scale(1)';
+                mainView.style.opacity = '1';
+                audioPlayer.pause();
+            });
+
+            document.getElementById('btn-playpause').addEventListener('click', (e) => {
+                if(audioPlayer.paused) {
+                    audioPlayer.play();
+                    e.currentTarget.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    audioPlayer.pause();
+                    e.currentTarget.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            });
+
+            document.getElementById('btn-prev').addEventListener('click', () => {
+                activeTrackIndex = (activeTrackIndex - 1 + 4) % 4;
+                openPlayer(activeTrackIndex);
+            });
+
+            document.getElementById('btn-next').addEventListener('click', () => {
+                activeTrackIndex = (activeTrackIndex + 1) % 4;
+                openPlayer(activeTrackIndex);
+            });
+
+            document.getElementById('btn-save').addEventListener('click', (e) => {
+                e.currentTarget.querySelector('i').classList.toggle('fas');
+                e.currentTarget.querySelector('i').classList.toggle('far');
+                e.currentTarget.style.color = '#ff0044';
+            });
+        }
+    </script>
+</body>
+</html>

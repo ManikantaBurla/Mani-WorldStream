@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mani-WorldStream | Sports</title>
+    <link rel="icon" type="image/png" href="{% static 'assets/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/sports.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    {% include 'sidebar.html' %}
+
+    <div class="sports-container">
+        
+        <div class="sports-header">
+            <h1 class="italic-title">LIVE <span class="red-text">ARENA</span></h1>
+            <div class="live-indicator"><span class="pulse-dot"></span> MATCHES IN PROGRESS</div>
+        </div>
+
+        <div class="scoreboard-strip">
+            <div class="score-card">
+                <div class="team">EAGLES <span>24</span></div>
+                <div class="team">WOLVES <span>17</span></div>
+                <div class="time-rem">Q4 02:15</div>
+            </div>
+            <div class="score-card">
+                <div class="team">TITANS <span>102</span></div>
+                <div class="team">METEORS <span>98</span></div>
+                <div class="time-rem">FINAL</div>
+            </div>
+            <div class="score-card">
+                <div class="team">UNITED <span>2</span></div>
+                <div class="team">CITY <span>2</span></div>
+                <div class="time-rem red-text">88'</div>
+            </div>
+        </div>
+
+        <div class="angled-gallery">
+            <div class="slant-card">
+                <img class="slant-bg" src="{% static 'images/pop.jpg' %}" alt="Highlight">
+                <div class="slant-content">
+                    <h2>CHAMPIONSHIP FINALS</h2>
+                    <i class="fas fa-play-circle play-highlight"></i>
+                </div>
+            </div>
+            <div class="slant-card">
+                <img class="slant-bg" src="{% static 'images/jazz.jpg' %}" alt="Highlight">
+                <div class="slant-content">
+                    <h2>TOP 10 PLAYS OF THE WEEK</h2>
+                    <i class="fas fa-play-circle play-highlight"></i>
+                </div>
+            </div>
+            <div class="slant-card">
+                <img class="slant-bg" src="{% static 'images/hiphop.jpeg' %}" alt="Highlight">
+                <div class="slant-content">
+                    <h2>ATHLETE SPOTLIGHT</h2>
+                    <i class="fas fa-play-circle play-highlight"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
