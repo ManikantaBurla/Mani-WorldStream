@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-**hddls_hy4v^!zlu3%wx0i38#=@-naf$*c#p&i(k)g#-pd#qn'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mani-worldstream.onrender.com', 'localhost', '127.0.0.1', '.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
