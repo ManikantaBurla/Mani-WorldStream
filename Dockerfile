@@ -12,5 +12,5 @@ COPY . .
 # Expose port 8000
 EXPOSE 8000
 
-# Run migrations and start Gunicorn server on container boot
-CMD python manage.py migrate --noinput && gunicorn config.wsgi:application --bind 0.0.0.0:8000
+# Collect static files, run migrations, and start Gunicorn server
+CMD python manage.py collectstatic --noinput && python manage.py migrate --noinput && gunicorn config.wsgi:application --bind 0.0.0.0:8000
